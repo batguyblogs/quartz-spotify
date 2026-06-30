@@ -1,0 +1,80 @@
+{
+  "name": "quartz-spotify",
+  "version": "1.0.0",
+  "description": "A Quartz v5 component that displays your current or last-played Spotify track via spotifylive.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Askbatguy",
+  "homepage": "https://github.com/Askbatguy/quartz-spotify",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Askbatguy/quartz-spotify"
+  },
+  "keywords": [
+    "quartz",
+    "quartz-plugin",
+    "spotify",
+    "music",
+    "component",
+    "now-playing"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "peerDependenciesMeta": {
+    "preact": {
+      "optional": false
+    }
+  },
+  "dependencies": {
+    "@quartz-community/types": "github:quartz-community/types"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "preact": "^10.28.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10.9.2"
+  },
+  "quartz": {
+    "name": "spotify",
+    "displayName": "Spotify Now Playing",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 50,
+    "defaultEnabled": true,
+    "defaultOptions": {},
+    "components": {
+      "Spotify": {
+        "displayName": "Spotify Now Playing",
+        "defaultPosition": "left",
+        "defaultPriority": 65
+      }
+    }
+  }
+}
