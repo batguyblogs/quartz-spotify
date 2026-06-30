@@ -72,6 +72,7 @@ export default defineConfig({
   esbuildOptions(options) {
     options.jsx = "automatic"
     options.jsxImportSource = "preact"
+    options.external = [...(options.external ?? []), "@jackyzha0/quartz", "@jackyzha0/quartz/*"]
   },
   esbuildPlugins: [inlineScriptPlugin],
 })
