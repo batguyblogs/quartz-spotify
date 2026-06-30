@@ -3,6 +3,7 @@ import type {
   QuartzComponentConstructor,
   QuartzComponentProps,
 } from "@quartz-community/types"
+import { componentRegistry } from "@jackyzha0/quartz/components/registry"
 
 const Spotify: QuartzComponentConstructor = (_userOpts?: unknown) => {
   const SpotifyComponent: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
@@ -36,5 +37,6 @@ const Spotify: QuartzComponentConstructor = (_userOpts?: unknown) => {
   return SpotifyComponent
 }
 
+componentRegistry.register("quartz-spotify", Spotify)
 export { Spotify }
 export default Spotify
