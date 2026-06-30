@@ -36,4 +36,5 @@ const Spotify: QuartzComponentConstructor = (_userOpts?: unknown) => {
   return SpotifyComponent
 }
 
+export { Spotify }
 export default Spotify
