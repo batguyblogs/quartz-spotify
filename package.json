@@ -4,11 +4,11 @@
   "description": "A Quartz v5 component that displays your current or last-played Spotify track via spotifylive.",
   "type": "module",
   "license": "MIT",
-  "author": "Askbatguy",
-  "homepage": "https://github.com/Askbatguy/quartz-spotify",
+  "author": "batguyblogs",
+  "homepage": "https://github.com/batguyblogs/quartz-spotify",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Askbatguy/quartz-spotify"
+    "url": "https://github.com/batguyblogs/quartz-spotify"
   },
   "keywords": [
     "quartz",
