@@ -56,9 +56,7 @@ const SINGLETON_EXTERNALS = [
 ]
 
 export default defineConfig({
-  entry: {
-    index: "src/index.tsx",
-  },
+  entry: ["src/index.tsx"],
   format: ["esm"],
   dts: true,
   tsconfig: "tsconfig.build.json",
