@@ -68,13 +68,6 @@
     "dependencies": [],
     "defaultOrder": 50,
     "defaultEnabled": true,
-    "defaultOptions": {},
-    "components": {
-      "Spotify": {
-        "displayName": "Spotify Now Playing",
-        "defaultPosition": "left",
-        "defaultPriority": 65
-      }
-    }
+    "defaultOptions": {}
   }
 }
