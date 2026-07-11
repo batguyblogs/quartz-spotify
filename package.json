@@ -32,7 +32,7 @@
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "sideEffects": false,
+  "sideEffects": true,
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -62,7 +62,7 @@
   "quartz": {
     "name": "spotify",
     "displayName": "Spotify Now Playing",
-    "category": "component",
+    "category": ["component"],
     "version": "1.0.0",
     "quartzVersion": ">=5.0.0",
     "dependencies": [],
