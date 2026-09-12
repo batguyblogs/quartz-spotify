@@ -3,9 +3,11 @@
 >[!warning]
 >Its claude written!!!!!!!
 
-A [Quartz v5](https://quartz.jzhao.xyz/) component that displays your current or last-played Spotify track using [Readme-Spotify-Now-Playing](https://github.com/Om-Thorat/Readme-Spotify-Now-Playing).
+A Quartz v5 component that displays your currently playing (or last played) Spotify track, rendered as an inline SVG widget.
 
-It renders a live SVG badge in your sidebar — under the graph view is a great spot.
+## What it does
+
+This component embeds a live-updating image sourced from a Spotify status endpoint, and periodically refreshes it so the "now playing" state stays current without a full page reload.
 
 ## Installation
 
@@ -13,24 +15,30 @@ It renders a live SVG badge in your sidebar — under the graph view is a great 
 npx quartz plugin add github:batguyblogs/quartz-spotify
 ```
 
-## Usage
-
-Add to your `quartz.config.yaml`:
+Then add it to your `quartz.config.yaml`:
 
 ```yaml
 plugins:
   - source: github:batguyblogs/quartz-spotify
     enabled: true
+    options:
+      endpoint: "https://spotifylive-kappa.vercel.app/"
+      refreshInterval: 30000
     layout:
       position: right
-      priority: 20
+      priority: 40
 ```
 
-The `priority: 20` places it just below the Graph View (which defaults to `10`). Adjust as needed.
+## Options
+
+| Option            | Type     | Default                                      | Description                                                      |
+| ----------------- | -------- | --------------------------------------------- | ------------------------------------------------------------------ |
+| `endpoint`         | `string` | `"https://spotifylive-kappa.vercel.app/"`     | URL returning the Spotify now-playing SVG.                        |
+| `refreshInterval`  | `number` | `30000`                                       | How often (in ms) to refresh the widget. Set to `0` to disable.   |
 
 ## How it works
 
-The component renders an `<img>` pointed at a Vercel-hosted instance of [Readme-Spotify-Now-Playing](https://github.com/Om-Thorat/Readme-Spotify-Now-Playing), which returns a dynamically generated SVG showing your now-playing or last-played track. No API keys are embedded — all auth is handled server-side on Vercel.
+The component renders an `<img>` tag pointing at the configured `endpoint`. A small client-side script cache-busts and re-fetches that image on the configured interval, so the widget updates as your currently playing track changes — no rebuild of the site required.
 
 ## License
 
