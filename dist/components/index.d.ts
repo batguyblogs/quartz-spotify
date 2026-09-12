@@ -1,10 +1,9 @@
-import { QuartzComponent } from '@quartz-community/types';
+import { QuartzComponentConstructor } from '@quartz-community/types';
 
-interface ExampleComponentOptions {
-    prefix?: string;
-    suffix?: string;
-    className?: string;
+interface Options {
+    endpoint: string;
+    refreshInterval: number;
 }
-declare const _default: (opts?: ExampleComponentOptions) => QuartzComponent;
+declare const SpotifyNowPlaying: QuartzComponentConstructor<Options>;
 
-export { _default as ExampleComponent, type ExampleComponentOptions };
+export { SpotifyNowPlaying, type Options as SpotifyNowPlayingOptions };
