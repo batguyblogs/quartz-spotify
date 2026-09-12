@@ -97,30 +97,31 @@
     "vitest": "^2.1.9"
   },
   "quartz": {
-    "name": "plugin-template",
-    "displayName": "Plugin Template",
+    "name": "quartz-spotify",
+    "displayName": "Spotify Now Playing",
     "category": [
-      "componenet"
+      "component"
     ],
     "version": "1.0.0",
     "quartzVersion": ">=5.0.0",
     "dependencies": [],
     "defaultOrder": 50,
     "defaultEnabled": true,
-    "defaultOptions": {},
+    "defaultOptions": {
+      "endpoint": "https://spotifylive-kappa.vercel.app/",
+      "refreshInterval": 30000
+    },
     "optionSchema": {
-      "highlightToken": {
-        "type": "enum",
-        "values": [
-          "==",
-          "**",
-          "~~"
-        ]
+      "endpoint": {
+        "type": "string"
+      },
+      "refreshInterval": {
+        "type": "number"
       }
     },
     "components": {
-      "ExampleComponent": {
-        "displayName": "Example Component",
+      "SpotifyNowPlaying": {
+        "displayName": "Spotify Now Playing",
         "defaultPosition": "right",
         "defaultPriority": 50
       }
